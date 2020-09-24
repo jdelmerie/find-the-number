@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sigmar+One&display=swap" rel="stylesheet">
+    <title>Find The Number</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="title"></h1>
+        <p>Comme le nom l'indique, le but du jeu est de trouver le bon nombre entre 1 et 100. <br> Vous avez 10 chances.
+        </p>
+        <button id="getNb">Générer un nombre</button>
+
+        <div id="playbox" class="hide">
+            <input type="text" id="userNb" placeholder="Saisissez un nombre" onfocus="if(this.value == 'valeur')this.value = '';"> 
+            <p id="chance"></p>
+            <p id="result"></p>
+        </div>
+    </div>
+</body>
+
+</html>
