@@ -16,7 +16,7 @@ body {
     background-color: #ffe7c7;
 }
 
-#title {
+#title, h2 {
     font-family: 'Sigmar One', cursive;
     font-size: 60px;
     text-align: center;
@@ -51,7 +51,7 @@ p {
 }
 
 /* boutton */
-#getNb {
+#getNb, #submit, #levels {
     padding: 10px;
     border-radius: 5px;
     background-color: #ffbf69;
@@ -60,6 +60,10 @@ p {
     cursor: pointer;
     margin-bottom: 15px;
 }
+#levels {
+    background-color: rgb(221, 255, 0);
+}
+
 
 
 #modal {

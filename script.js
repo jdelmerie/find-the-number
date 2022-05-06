@@ -1,12 +1,38 @@
 let random;
+let introMsg = document.getElementById("introMsg");
 let result = document.getElementById("result");
 let input = document.getElementById("userNb");
 let chance = document.getElementById("chance");
 let validate = document.getElementById("validate");
 let getNb = document.getElementById("getNb");
 let playbox = document.getElementById("playbox");
+let selectLevel = document.getElementById("submit");
+let levelChoiceBlock = document.getElementById("levelChoice");
 let letter = 0;
 let title = "Find The Number";
+getNb.style.visibility = "hidden";
+let life = 0;
+function showGenerateNumber(){
+    let level = document.getElementById("levels").value;
+    switch(level) {
+        case "Facile":
+          life = 15;
+          break;
+        case "Moyen":
+          life = 10;
+          break;
+        case "Difficile":
+          life = 5;
+          break;
+        default:
+          // code block
+    }
+
+    levelChoiceBlock.style.visibility = "hidden";
+    introMsg.innerHTML = "Vous êtes sur un niveau <strong style='color:orange;'>"+ level+"</strong> <br> Vous avez <strong style='color:orange;'>"+ life+"</strong> tentatives à jouer"
+    getNb.style.visibility = "visible";
+    levelChoiceBlock.replaceWith(getNb); 
+}
 
 
 getNb.addEventListener("click", () => {
@@ -18,10 +44,10 @@ getNb.addEventListener("click", () => {
 getNb.addEventListener("click", play)
 
 function play() {
-    let life = 10;
+
     let gameDone = 0;
     let reset = "Appuyez sur la touche Echap pour rejouer"
-
+    
     document.body.addEventListener("keydown", function (e) {
         let userNb = input.value
         let x = parseInt(userNb); // numéro saisi
